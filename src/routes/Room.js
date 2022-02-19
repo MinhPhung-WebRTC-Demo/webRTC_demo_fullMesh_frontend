@@ -45,7 +45,7 @@ const Room = (props) => {
     const roomID = props.match.params.roomID;
 
     useEffect(() => {
-        socketRef.current = io.connect("/");
+        socketRef.current = io.connect("https://webrtcdemobackend.herokuapp.com/");
         window.navigator.mediaDevices.getUserMedia({ video: videoConstraints, audio: true }).then(stream => {
             console.log(stream)
             userVideo.current.srcObject = stream;
